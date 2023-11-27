@@ -1,0 +1,147 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Questrial:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Times+New+Roman:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap">
+
+    <title>Form Validation</title>
+
+    <link rel="stylesheet" href="form.css">
+    <script defer src="form.js"></script>
+</head>
+
+<body style="font-family: Archivo; background-image: url('https://images.unsplash.com/photo-1559763194-521eef49b386?q=80&w=1938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-repeat: no-repeat;">
+
+    <div class="container">
+
+        <form id="form" action="/">
+
+            <h1 style="font-size: 35px;">Sign up</h1>
+            <br>
+            <h3 style="text-align: center">Already have an account?
+                <a href="#"> <u style="color:#776B5D;">Log in</u> </a>
+            </h3>
+            <br><br>
+
+            <div class="input-control">
+                <label for="username" style="font-size: 20px; padding-bottom: 10px; border-radius: 20px;">Username</label>
+                <input id="username" name="username" type="text">
+                <div class="error"></div>
+            </div>
+
+            <div class="input-control">
+                <label for="email" style="font-size: 20px; padding-bottom: 10px; ">Email</label>
+                <input id="email" name="email" type="text">
+                <div class="error"></div>
+            </div>
+
+            <div class="input-control">
+                <label for="password" style="font-size: 20px; padding-bottom: 10px;">Password</label>
+                <input id="password" name="password" type="password">
+                <div class="error"></div>
+            </div>
+
+            <div class="input-control">
+                <label for="password2" style="font-size: 20px; padding-bottom: 10px;">Confirm Password</label>
+                <input id="password2" name="password2" type="password">
+                <div class="error"></div>
+            </div>
+
+            <br>
+
+            <a href="#"><button type="submit" id="submit-btn">CREATE ACCOUNT</button></a>
+            <br><br><br>
+            <span style="align-items: left; font-size: 15px;">Or you can Login with:</span>
+            <br>
+            <div class="socials">
+                <button type="submit" style="background-color: lightgrey; border-radius: 25px;" id="google" name="Google"> <img style="width: 15%;" src="https://cdn-icons-png.flaticon.com/128/300/300221.png"> </button>
+                <button type="submit" style="background-color: #3A559F; border-radius: 25px;" id="facebook" name="FaceBook"> <img style="width: 15%;"  style="background-color: #3A559F;" src="https://cdn-icons-png.flaticon.com/128/3670/3670032.png"> </button>
+                <button type="submit" style="background-color: black; border-radius: 25px;" id="apple" name="Apple"> <img style="width: 15%;"  src="https://cdn-icons-png.flaticon.com/128/232/232409.png"> </button>
+            </div>
+            <br><br>
+            <span style="text-align: center;"> By continuing, you agree to our <u>Terms & Conditions</u>, and our <u>Privacy Policy</u> </span>
+
+
+        </form>
+
+    </div>
+
+
+    <script>
+        const submitButton = document.querySelector('#submit-btn');
+
+        submitButton.addEventListener('mouseover', () => {
+            submitButton.style.size = 'scale(1.03)';
+            submitButton.style.backgroundColor = '#0548a7';
+            submitButton.style.fontSize = '14px';
+            submitButton.style.fontFamily = 'Archivo';
+            submitButton.style.transition = '0.3s ease-in-out';
+            submitButton.style.boxShadow = '4px 3px 3px 0px black';
+        });
+
+        submitButton.addEventListener('mouseout', () => {
+            submitButton.style.size = 'scale(1)';
+            submitButton.style.backgroundColor = '#0E6EF8';
+            submitButton.style.fontSize = '13px';
+            submitButton.style.boxShadow = '';
+        });
+
+        const google = document.querySelector('#google');
+        const facebook = document.querySelector('#facebook');
+        const apple = document.querySelector('#apple');
+
+        google.addEventListener('mouseover', () => {
+            google.style.backgroundColor = '#BABABA';
+            google.style.boxShadow = '3px 4px 2px 0px darkgrey';
+
+            google.style.transition = '0.2s ease-in';
+        });
+        google.addEventListener('mouseout', () => {
+            google.style.backgroundColor = 'lightgrey';
+            google.style.boxShadow = '';
+        });
+
+        facebook.addEventListener('mouseover', () => {
+            facebook.style.backgroundColor = '#4e6cbe';
+            facebook.style.boxShadow = '3px 4px 2px 0px darkgrey';
+            facebook.style.transition = '0.2s ease-in';
+        });
+        facebook.addEventListener('mouseout', () => {
+            facebook.style.backgroundColor = '#3A559F';
+            facebook.style.boxShadow = '';
+        });
+
+        apple.addEventListener('mouseover', () => {
+            apple.style.backgroundColor = '#525252';
+            apple.style.boxShadow = '3px 4px 2px 0px darkgrey';
+            apple.style.transition = '0.2s ease-in';
+        });
+        apple.addEventListener('mouseout', () => {
+            apple.style.backgroundColor = 'black';
+            apple.style.boxShadow = '';
+        });
+    </script>
+
+    <footer>
+
+        <span style="text-align: left; font-weight: 600; font-size: 18px;">Designed by Adrian Oduma</span>
+
+        <div style="display: flex; flex-direction: row-reverse; gap: 15px;">
+            <span><a href="https://linkedin.com/in/adrian-oduma-4374a4252/" style="text-decoration: none; color: black; font-weight: 600; font-size: 18px;"> LinkedIn </a></span>
+            <span style="text-decoration: none; color: black; font-weight: 600; font-size: 20px;"> | </span>
+            <span><a href="https://github.com/Odushhh" style="text-decoration: none; color: black; font-weight: 600; font-size: 18px;"> GitHub </a></span>
+        </div>
+
+    </footer>
+</body>
+
+</html>
